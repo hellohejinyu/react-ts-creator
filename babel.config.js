@@ -1,6 +1,13 @@
 module.exports = (api) => {
   const presets = [
-    '@babel/env',
+    [
+      '@babel/env', {
+        targets: {
+          i1: 11
+        },
+        useBuiltIns: 'usage'
+      }
+    ],
     '@babel/typescript',
     '@babel/react'
   ]

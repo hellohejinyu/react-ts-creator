@@ -1,3 +1,7 @@
 {
-  "extends": ["tslint:latest", "tslint-react", "tslint-config-standard"]
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-standard"],
+  "rules": {
+    "member-access": false,
+    "interface-name": false
+  }
 }

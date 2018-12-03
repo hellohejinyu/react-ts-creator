@@ -7,12 +7,7 @@
     "dev": "node devServer.js",
     "start": "npm run dev",
     "test": "jest --coverage",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
-    "build": "npm run build:types && npm run build:js",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
-    "bundle": "webpack"
+    "build": "webpack --config webpack.config.prod.js"
   },
   "keywords": [
     "react",
@@ -30,9 +25,19 @@
     "@babel/preset-typescript": "^7.1.0",
     "@types/node": "^10.12.11",
     "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^1.0.0",
+    "css-loader": "^1.0.1",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.5",
+    "node-sass": "^4.10.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.4.0",
     "react-dev-utils": "^6.1.1",
+    "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^2.0.0",
+    "style-loader": "^0.23.1",
     "tslint": "^5.11.0",
     "tslint-config-standard": "^8.0.1",
     "tslint-react": "^3.6.0",
@@ -40,11 +45,14 @@
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
-    "webpack-hot-middleware": "^2.24.3"
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "@types/react": "^16.7.11",
     "@types/react-dom": "^16.0.11",
+    "normalize.css": "^8.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-hot-loader": "^4.3.12"
