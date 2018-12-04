@@ -2,11 +2,11 @@ import { createActions } from '../../redux'
 import meta from './meta'
 
 export interface Actions {
-  test: () => boolean
+  clicked: () => true
 }
 
 export default createActions(meta.id, {
-  test () {
+  clicked () {
     return true
   }
 })

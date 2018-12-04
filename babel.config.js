@@ -3,7 +3,7 @@ module.exports = (api) => {
     [
       '@babel/env', {
         targets: {
-          i1: 11
+          ie: 11
         },
         useBuiltIns: 'usage'
       }
@@ -12,9 +12,9 @@ module.exports = (api) => {
     '@babel/react'
   ]
   const plugins = [
-    'react-hot-loader/babel',
     '@babel/proposal-class-properties',
-    '@babel/proposal-object-rest-spread'
+    '@babel/proposal-object-rest-spread',
+    'react-hot-loader/babel'
   ]
   api.cache(false)
   return { presets, plugins }

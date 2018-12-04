@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { connect } from '../../../../redux'
+import { connect } from 'src/redux'
 import actions, { Actions } from '../../actions'
 import meta from '../../meta'
 import { State } from '../../reducers'
@@ -8,9 +8,11 @@ import styles from './index.scss'
 
 class Page extends PureComponent<{ actions: Actions } & State> {
   click () {
-    this.props.actions.test()
+    const { actions: { clicked } } = this.props
+    clicked()
   }
   render () {
+    const { clicked } = this.props
     return (
       <div
         className={styles.title}
@@ -18,7 +20,7 @@ class Page extends PureComponent<{ actions: Actions } & State> {
           this.click()
         }}
       >
-        Home
+        Hello, {clicked ? 'Typescript' : 'React'}
       </div>
     )
   }

@@ -39,9 +39,17 @@ const loading = ({ dispatch, getState }: { dispatch: (a: any) => any; getState: 
 
 const middlewares = applyMiddleware(routerMiddleware(history), loading)
 
-export default createStore(
+const store = createStore(
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(middlewares)
     : compose(middlewares)
 )
+
+if (module.hot) {
+  module.hot.accept('./reducers', () => {
+    store.replaceReducer(rootReducer)
+  })
+}
+
+export default store
