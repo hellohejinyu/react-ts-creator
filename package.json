@@ -1,74 +1,29 @@
 {
   "name": "react-ts-creator",
   "version": "1.0.0",
-  "description": "react&ts",
-  "main": "src/index.tsx",
-  "scripts": {
-    "dev": "node devServer.js",
-    "start": "npm run dev",
-    "test": "jest --coverage",
-    "build": "webpack --config webpack.config.prod.js",
-    "type:check": "tsc --noEmit"
+  "description": "create react and typescript app easily",
+  "bin": "./bin/react-ts-creator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elowes/react-ts-creator.git"
   },
   "keywords": [
     "react",
+    "generator",
     "typescript"
   ],
   "author": "kaijun",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.1.0",
-    "@types/node": "^10.12.11",
-    "@types/webpack-env": "^1.13.6",
-    "babel-loader": "^8.0.4",
-    "clean-webpack-plugin": "^1.0.0",
-    "css-loader": "^1.0.1",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "file-loader": "^2.0.0",
-    "fork-ts-checker-webpack-plugin": "^0.5.0",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.4.5",
-    "node-sass": "^4.10.0",
-    "postcss-loader": "^3.0.0",
-    "postcss-preset-env": "^6.4.0",
-    "react-dev-utils": "^6.1.1",
-    "sass-loader": "^7.1.0",
-    "sass-resources-loader": "^2.0.0",
-    "style-loader": "^0.23.1",
-    "tslint": "^5.11.0",
-    "tslint-config-standard": "^8.0.1",
-    "tslint-react": "^3.6.0",
-    "typescript": "^3.1.5",
-    "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-middleware": "^3.4.0",
-    "webpack-hot-middleware": "^2.24.3",
-    "webpack-merge": "^4.1.4"
-  },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
-    "@types/history": "^4.7.2",
-    "@types/react": "^16.7.11",
-    "@types/react-dom": "^16.0.11",
-    "@types/react-redux": "^6.0.10",
-    "@types/react-router-dom": "^4.3.1",
-    "@types/redux-actions": "^2.3.1",
-    "connected-react-router": "^5.0.1",
-    "history": "^4.7.2",
-    "normalize.css": "^8.0.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-hot-loader": "^4.3.12",
-    "react-redux": "^5.1.1",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1",
-    "redux-actions": "^2.6.4"
-  }
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "cross-spawn": "^6.0.5",
+    "ejs": "^2.6.1",
+    "fs-extra": "^7.0.1",
+    "inquirer": "^6.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/elowes/react-ts-creator/issues"
+  },
+  "homepage": "https://github.com/elowes/react-ts-creator#readme"
 }

@@ -1,2 +1,9 @@
 # react-ts-creator
-快速搭建 Typescript + React 项目脚手架
+
+> 快速创建React&Typescript应用
+
+# 使用方法
+
+`
+npx react-ts-creator init my-app
+`

@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+const { logRed, initProj } = require('../lib/utils');
+const program = require('commander');
+const fs = require('fs');
+const path = require('path');
+
+program
+  .command('init [app-name]')
+  .alias('i')
+  .description('在[app-name]文件夹下创建React&Typescript应用，如果没有[app-name]，则直接在当前目录下创建')
+  .action(function(appName) {
+    if (!appName) {
+      const appPath = path.resolve('./');
+      initProj(appPath);
+    } else {
+      const appPath = path.resolve(`./${appName}`);
+      if (fs.existsSync(appPath)) {
+        logRed('当前目录已存在，无法继续创建应用，请删除目录或更换目录后重试');
+      } else {
+        initProj(appPath);
+      }
+    }
+  })
+
+program
+  .version(require('../package.json').version, '-v, --version')
+
+program.parse(process.argv);
