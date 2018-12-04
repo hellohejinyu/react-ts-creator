@@ -2,6 +2,8 @@
   "extends": ["tslint:latest", "tslint-react", "tslint-config-standard"],
   "rules": {
     "member-access": false,
-    "interface-name": false
+    "interface-name": false,
+    "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false
   }
 }

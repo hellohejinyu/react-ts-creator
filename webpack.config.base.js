@@ -14,6 +14,17 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpg|gif|ttf|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/[hash].[ext]'
+            }
+          }
+        ]
+      },
+      {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
