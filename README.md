@@ -1,9 +1,12 @@
-# react-ts-creator
+# React&Typescript App Creator
 
-> 快速创建React&Typescript应用
+Create React&Typescript apps by running one command. 
 
-# 使用方法
+## Quick Overview
 
-`
+``` sh
 npx react-ts-creator init my-app
-`
+```
+
+Then open [http://localhost:8877/](http://localhost:8877/) to see your app.<br>
+When you're ready to deploy to production, create a minified bundle with `npm run build`

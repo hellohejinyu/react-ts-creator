@@ -8,7 +8,7 @@ const path = require('path');
 program
   .command('init [app-name]')
   .alias('i')
-  .description('在[app-name]文件夹下创建React&Typescript应用，如果没有[app-name]，则直接在当前目录下创建')
+  .description('Create a React&Typescript app under the [app-name] folder. If there is no [app-name], create it directly in the current directory.')
   .action(function(appName) {
     if (!appName) {
       const appPath = path.resolve('./');
@@ -16,7 +16,7 @@ program
     } else {
       const appPath = path.resolve(`./${appName}`);
       if (fs.existsSync(appPath)) {
-        logRed('当前目录已存在，无法继续创建应用，请删除目录或更换目录后重试');
+        logRed('The current directory already exists. Can\'t continue. Please delete or replace the directory and try again.');
       } else {
         initProj(appPath);
       }
