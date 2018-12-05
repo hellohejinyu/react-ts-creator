@@ -1,6 +1,6 @@
-# React&Typescript App Creator
+# React&TypeScript App Creator
 
-Create React&Typescript apps by running one command. 
+Create React&TypeScript apps by running one command. 
 
 ## Quick Overview
 
