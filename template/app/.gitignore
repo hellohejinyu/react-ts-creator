@@ -1,8 +1,0 @@
-# Lock version files
-package-lock.json
-
-# Node modules flies
-/node_modules
-
-# Build files
-/dist

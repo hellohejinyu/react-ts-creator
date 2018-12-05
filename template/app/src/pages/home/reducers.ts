@@ -3,18 +3,18 @@ import { handleActions } from 'redux-actions'
 import actions from './actions'
 
 export interface State {
-  clicked: boolean
+  answer: null | { answer: 'yes' | 'no', image: string }
 }
 
-const initialState = {
-  clicked: false
+const initialState: State = {
+  answer: null
 }
 
 export default handleActions<any>({
-  [actions.clicked] (state, { payload }) {
+  [actions.fetch] (state, { payload }) {
     return {
       ...state,
-      clicked: payload
+      answer: payload
     }
   }
 }, initialState)

@@ -1,12 +1,16 @@
+import api from 'src/api'
 import { createActions } from '../../redux'
 import meta from './meta'
 
 export interface Actions {
-  clicked: () => true
+  fetch: () => Promise<any>
 }
 
-export default createActions(meta.id, {
-  clicked () {
-    return true
+const actions: { [K in keyof Actions]: any } = createActions(meta.id, {
+  async fetch () {
+    const res = await api.yes.no()
+    return res
   }
 })
+
+export default actions
