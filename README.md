@@ -1,4 +1,4 @@
-# React&TypeScript App Creator
+# React&TypeScript App Creator &middot; [![npm](https://img.shields.io/npm/v/react-ts-creator.svg)](https://www.npmjs.com/package/react-ts-creator)
 
 Create React&TypeScript apps by running one command. 
 
