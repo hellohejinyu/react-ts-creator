@@ -1,5 +1,5 @@
 import api from 'src/api'
-import { createActions } from '../../redux'
+import { createActions } from 'src/redux/actions'
 import meta from './meta'
 
 export interface Actions {

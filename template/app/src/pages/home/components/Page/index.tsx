@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { connect } from 'src/redux'
+import connect from 'src/redux/connect'
 import actions, { Actions } from '../../actions'
 import meta from '../../meta'
 import { State } from '../../reducers'

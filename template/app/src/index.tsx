@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
 import history from './history'
-import { store } from './redux'
+import store from './redux/store'
 
 import App from './App'
 

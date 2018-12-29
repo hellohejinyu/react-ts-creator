@@ -1,9 +1,6 @@
 import { connect as reduxConnect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { createActions } from './actions'
-import store from './store'
-
 /**
  * 注入 store 和 actions 到组件
  * @param id 组件 meta id
@@ -16,8 +13,4 @@ function connect (id: string, actions: any) {
   )
 }
 
-export {
-  createActions,
-  store,
-  connect
-}
+export default connect
