@@ -22,7 +22,9 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/[hash].[ext]'
+              outputPath: 'assets',
+              publicPath: '/assets',
+              name: '[hash].[ext]'
             }
           }
         ]
