@@ -1,4 +1,4 @@
- const config = require('./webpack.config.dev')
+const config = require('./webpack.config.dev')
 const express = require('express')
 const openBrowser = require('react-dev-utils/openBrowser')
 const webpack = require('webpack')
