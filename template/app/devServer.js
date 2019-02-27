@@ -1,4 +1,4 @@
-const config = require('./webpack.config.dev')
+ const config = require('./webpack.config.dev')
 const express = require('express')
 const openBrowser = require('react-dev-utils/openBrowser')
 const webpack = require('webpack')
@@ -26,12 +26,24 @@ app.get('*', (req, res) => {
   res.render('index');
 })
 
+const interfaces = require('os').networkInterfaces(); // get ip address in local area network
+let ip = 'localhost';
+for (var devName in interfaces) {  
+  var iface = interfaces[devName];  
+  for (var i = 0; i < iface.length; i++) {  
+    var alias = iface[i];  
+    if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal){  
+      ip = alias.address;  
+    }  
+  }
+}
+
 app.listen(port, (err) => {
   if (err) {
     return console.error(err);
   }
-  if (openBrowser(`http://localhost:${port}`)) {
-    console.log(`Server Started. Listen :${port}`);
+  if (openBrowser(`http://${ip}:${port}`)) {
+    console.log(`Server Started. Listen http://${ip}:${port}`);
   }
 })
 
