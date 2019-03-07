@@ -20,7 +20,7 @@ const prodConfig = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name]-[chunkhash].css',
-      chunkFilename: 'css/[id].css'
+      chunkFilename: 'css/[id]-[chunkhash].css'
     })
   ]
 }
