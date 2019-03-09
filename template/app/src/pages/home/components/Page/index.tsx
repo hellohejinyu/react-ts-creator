@@ -8,20 +8,29 @@ import { State } from '../../reducers'
 import styles from './index.scss'
 
 class Page extends PureComponent<{ actions: Actions } & State> {
-  componentDidMount () {
+  async componentDidMount () {
     const { actions: { fetch } } = this.props
-    fetch()
+    await fetch()
   }
   render () {
     const { answer } = this.props
     return (
       <>
         {
-          answer && <div
+          answer ? <div
             className={styles.container}
             style={{ backgroundImage: `url(${answer.image})` }}
           >
             {answer.answer.toUpperCase()}
+          </div> :
+          <div
+            style={{
+              color: 'white',
+              marginTop: 100,
+              textAlign: 'center'
+            }}
+          >
+            loading
           </div>
         }
       </>
