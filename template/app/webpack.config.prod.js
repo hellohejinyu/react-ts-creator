@@ -13,7 +13,7 @@ const prodConfig = {
     filename: 'js/[name]-[chunkhash].js'
   },
   plugins: [
-    new CleanWebpackPlugin('dist'),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'App',
       template: './tmpl/index.html'
