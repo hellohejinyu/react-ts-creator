@@ -2,10 +2,31 @@
 
 Create React&TypeScript apps by running one command. 
 
+## Usage
+`
+react-ts-creator [command]
+`
+
+### Commands:
+`
+init|i [options] [app-name]
+`
+
+> Create a React&Typescript app under the [app-name] folder. If there is no [app-name], create it 
+directly in the current directory.
+
+### Options
+`
+-m, --mini
+`
+
+> Smaller app without Redux and something.
+
+
 ## Quick Overview
 
 ``` sh
-npx react-ts-creator init [app-name]
+npx react-ts-creator init [options] [app-name]
 ```
 Open [http://localhost:8877/](http://localhost:8877/) to see your app.<br>
 

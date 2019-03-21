@@ -1,24 +1,30 @@
 #!/usr/bin/env node
 
-const { logRed, initProj } = require('../lib/utils');
+const { logRed, initProj, logGreen } = require('../lib/utils');
 const program = require('commander');
 const fs = require('fs');
 const path = require('path');
 
 program
   .command('init [app-name]')
+  .option('-m, --mini', 'smaller app without Redux and something')
   .alias('i')
-  .description('Create a React&Typescript app under the [app-name] folder. If there is no [app-name], create it directly in the current directory.')
-  .action(function(appName) {
+  .description('create a React&Typescript app under the [app-name] folder. If there is no [app-name], create it directly in the current directory.')
+  .action(function(appName, cmd) {
+    let miniFlag = false
+    if (cmd.mini) {
+      logGreen('Smaller app will created.')
+      miniFlag = true
+    }
     if (!appName) {
       const appPath = path.resolve('./');
-      initProj(appPath);
+      initProj(appPath, miniFlag);
     } else {
       const appPath = path.resolve(`./${appName}`);
       if (fs.existsSync(appPath)) {
         logRed('The current directory already exists. Can\'t continue. Please delete or replace the directory and try again.');
       } else {
-        initProj(appPath);
+        initProj(appPath, miniFlag);
       }
     }
   })
