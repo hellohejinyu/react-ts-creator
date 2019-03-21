@@ -18,7 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.4",
+    "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
@@ -72,6 +72,7 @@
     "@types/react-router-dom": "^4.3.1",
     "@types/redux-actions": "^2.3.2",
     "connected-react-router": "^6.3.1",
+    "core-js": "^3.0.0",
     "history": "^4.7.2",
     "natty-fetch": "^2.6.0",
     "normalize.css": "^8.0.1",

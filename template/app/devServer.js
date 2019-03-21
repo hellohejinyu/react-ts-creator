@@ -10,9 +10,7 @@ const compiler = webpack(config)
 
 app.set('view engine', 'ejs')
 
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true
-}))
+app.use(require('webpack-dev-middleware')(compiler))
 
 app.use(require('webpack-hot-middleware')(compiler))
 
