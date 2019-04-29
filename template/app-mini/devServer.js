@@ -3,7 +3,7 @@ const express = require('express')
 const openBrowser = require('react-dev-utils/openBrowser')
 const webpack = require('webpack')
 
-const port = 8877
+const PORT = 8877
 
 const app = express()
 const compiler = webpack(config)
@@ -36,12 +36,19 @@ for (var devName in interfaces) {
   }
 }
 
-app.listen(port, (err) => {
-  if (err) {
-    return console.error(err);
-  }
-  if (openBrowser(`http://${ip}:${port}`)) {
-    console.log(`Server Started. Listen http://${ip}:${port}`);
-  }
-})
+function startServer (port) {
+  app.listen(port, () => {
+    if (openBrowser(`http://${ip}:${port}`)) {
+      console.log(`Server Started. Listen http://${ip}:${port}`);
+    }
+  }).on('error', (e) => {
+    if (e.code === 'EADDRINUSE') {
+      startServer(port + 1);
+    } else {
+      throw new Error('Unknown Error');
+    }
+  })
+}
+
+startServer(PORT)
 
