@@ -1,12 +1,13 @@
 const path = require('path')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
-    index: path.resolve(__dirname, './src/index'),
+    index: path.resolve(__dirname, './src/index')
   },
   output: {
     path: path.resolve(__dirname, './dist'),
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
@@ -33,7 +34,7 @@ module.exports = {
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
       },
       {
         test: /\.css$/,
@@ -64,6 +65,6 @@ module.exports = {
           }
         ]
       }
-    ],
+    ]
   }
-};
+}
