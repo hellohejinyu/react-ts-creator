@@ -15,14 +15,6 @@ init|i [options] [app-name]
 > Create a React&Typescript app under the [app-name] folder. If there is no [app-name], create it 
 directly in the current directory.
 
-### Options
-`
--m, --mini
-`
-
-> Smaller app without Redux and something.
-
-
 ## Quick Overview
 
 ``` sh
