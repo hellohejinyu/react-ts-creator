@@ -1,0 +1,27 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    display: block;
+    width: 80px;
+    animation: rotate 15s linear infinite;
+  }
+  .title {
+    color: $primary-color;
+    text-align: center;
+    font-weight: lighter;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

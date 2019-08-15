@@ -1,5 +1,10 @@
 {
-  "extends": ["tslint:latest", "tslint-react", "tslint-config-standard"],
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-config-standard",
+    "tslint-react-hooks"
+  ],
   "rules": {
     "member-access": false,
     "interface-name": false,
