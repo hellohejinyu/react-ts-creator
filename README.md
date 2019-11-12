@@ -20,7 +20,7 @@ directly in the current directory.
 ``` sh
 npx react-ts-creator init [app-name]
 ```
-Open [http://localhost:8877/](http://localhost:8877/) to see your app.<br>
+Enter `npm run start` to start the development server
 
 When you're ready to deploy to production, create a minified bundle with `npm run build`
 
