@@ -13,7 +13,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
       'react-dom': '@hot-loader/react-dom',
-      'src': path.resolve(__dirname, './src')
+      src: path.resolve(__dirname, './src')
     }
   },
   module: {
@@ -51,8 +51,8 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[local]-[hash:base64:8]',
-              },
+                localIdentName: '[local]-[hash:base64:8]'
+              }
             }
           },
           'postcss-loader',

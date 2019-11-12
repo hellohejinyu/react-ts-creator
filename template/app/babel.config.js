@@ -16,6 +16,8 @@ module.exports = (api) => {
     '@babel/plugin-syntax-dynamic-import',
     '@babel/proposal-class-properties',
     '@babel/proposal-object-rest-spread',
+    '@babel/proposal-optional-chaining',
+    '@babel/proposal-nullish-coalescing-operator',
     'react-hot-loader/babel'
   ]
   api.cache(false)
