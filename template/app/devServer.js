@@ -2,13 +2,12 @@ const config = require('./webpack.config.dev')
 const express = require('express')
 const openBrowser = require('react-dev-utils/openBrowser')
 const webpack = require('webpack')
+const path = require('path')
 
 const PORT = 8800
 
 const app = express()
 const compiler = webpack(config)
-
-app.set('view engine', 'ejs')
 
 app.use(require('webpack-dev-middleware')(compiler))
 
@@ -21,7 +20,7 @@ app.use(function (req, res, next) {
 })
 
 app.get('*', (req, res) => {
-  res.render('index')
+  res.sendFile(path.resolve('./index.html'))
 })
 
 const interfaces = require('os').networkInterfaces() // get ip address in local area network

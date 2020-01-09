@@ -17,8 +17,8 @@ const prodConfig = {
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'App',
-      template: './tmpl/index.html'
+      title: 'Untitled',
+      template: './index.html'
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name]-[chunkhash].css',

@@ -13,7 +13,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
       'react-dom': '@hot-loader/react-dom',
-      src: path.resolve(__dirname, './src')
+      '@': path.resolve(__dirname, './src')
     }
   },
   module: {
@@ -24,6 +24,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
+              esModule: false,
               outputPath: 'assets',
               publicPath: '/assets',
               name: '[hash].[ext]'
