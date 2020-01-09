@@ -1,7 +1,6 @@
-const webpack = require('webpack')
-const merge = require('webpack-merge')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const merge = require('webpack-merge')
+const webpack = require('webpack')
 
 const baseConfig = require('./webpack.config.base')
 
@@ -19,13 +18,8 @@ const devConfig = {
   devtool: 'source-map',
   entry: entry,
   plugins: [
-    new webpack.ProgressPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new ForkTsCheckerWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'Untitled',
-      template: './index.html'
-    })
+    new ForkTsCheckerWebpackPlugin()
   ]
 }
 
