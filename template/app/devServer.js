@@ -19,8 +19,16 @@ app.use(function (req, res, next) {
   next()
 })
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve('./index.html'))
+app.use('*', function (req, res, next) {
+  const filename = path.join(compiler.outputPath, 'index.html')
+  compiler.outputFileSystem.readFile(filename, (err, result) => {
+    if (err) {
+      return next(err)
+    }
+    res.set('content-type', 'text/html')
+    res.send(result)
+    res.end()
+  })
 })
 
 const interfaces = require('os').networkInterfaces() // get ip address in local area network
