@@ -29,10 +29,10 @@ When you're ready to deploy to production, create a minified bundle with `npm ru
 Q: When I use `optional chaining` and `nullish-coalescing` in Typescript@3.7+.
 It will throw error in terminal.
 
-![](./imgs/0.png)
+![](./assets/0.png)
 
 A: You need to make sure your VSCode is using the correct version of TypeScript
 
-![](./imgs/1.png)
+![](./assets/1.png)
 
-![](./imgs/2.png)
+![](./assets/2.png)
