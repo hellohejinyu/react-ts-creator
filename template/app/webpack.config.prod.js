@@ -9,15 +9,15 @@ const baseConfig = require('./webpack.config.base')
 const prodConfig = {
   mode: 'production',
   output: {
-    filename: 'js/[name]-[chunkhash].js'
+    filename: 'js/[name]-[chunkhash].js',
   },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name]-[chunkhash].css',
-      chunkFilename: 'css/[id]-[chunkhash].css'
-    })
-  ]
+      chunkFilename: 'css/[id]-[chunkhash].css',
+    }),
+  ],
 }
 
 const config = merge(baseConfig, prodConfig)

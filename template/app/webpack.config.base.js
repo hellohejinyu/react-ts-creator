@@ -5,18 +5,18 @@ const webpack = require('webpack')
 
 module.exports = {
   entry: {
-    index: path.resolve(__dirname, './src/index')
+    index: path.resolve(__dirname, './src/index'),
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
       'react-dom': '@hot-loader/react-dom',
-      '@': path.resolve(__dirname, './src')
-    }
+      '@': path.resolve(__dirname, './src'),
+    },
   },
   module: {
     rules: [
@@ -29,34 +29,39 @@ module.exports = {
               esModule: false,
               outputPath: 'assets',
               publicPath: '/assets',
-              name: '[hash].[ext]'
-            }
-          }
-        ]
+              name: '[hash].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/,
         use: [
-          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader', 'postcss-loader'
-        ]
+          process.env.NODE_ENV !== 'production'
+            ? 'style-loader'
+            : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ],
       },
       {
         test: /\.scss$/,
         use: [
-          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          process.env.NODE_ENV !== 'production'
+            ? 'style-loader'
+            : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[local]-[hash:base64:8]'
-              }
-            }
+                localIdentName: '[local]-[hash:base64:8]',
+              },
+            },
           },
           'postcss-loader',
           'sass-loader',
@@ -64,18 +69,18 @@ module.exports = {
             loader: 'sass-resources-loader',
             options: {
               // 将 var.scss 引入到每个 scss 文件，方便每个文件直接使用变量
-              resources: [path.resolve(__dirname, './src/styles/var.scss')]
-            }
-          }
-        ]
-      }
-    ]
+              resources: [path.resolve(__dirname, './src/styles/var.scss')],
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       title: 'Untitled',
-      template: './index.html'
-    })
-  ]
+      template: './index.html',
+    }),
+  ],
 }

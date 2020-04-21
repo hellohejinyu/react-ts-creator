@@ -4,11 +4,8 @@ module.exports = {
   plugins: [
     postcssPresetEnv({
       autoprefixer: {
-        overrideBrowserslist: [
-          'Chrome > 38',
-          'ie >= 8'
-        ]
-      }
-    })
-  ]
+        overrideBrowserslist: ['Chrome > 38', 'ie >= 8'],
+      },
+    }),
+  ],
 }

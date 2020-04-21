@@ -6,7 +6,8 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "standard"
+        "standard",
+        "plugin:prettier/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -23,12 +24,11 @@
     "plugins": [
         "react",
         "react-hooks",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
         "react/display-name": "off",
-        "no-unused-vars": "warn",
-        "react-hooks/exhaustive-deps": "warn",
-        "react-hooks/rules-of-hooks": "error"
+        "prettier/prettier": "error"
     }
 }

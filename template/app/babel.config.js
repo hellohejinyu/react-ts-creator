@@ -1,16 +1,17 @@
 module.exports = (api) => {
   const presets = [
     [
-      '@babel/env', {
+      '@babel/env',
+      {
         targets: {
-          ie: 11
+          ie: 11,
         },
         useBuiltIns: 'usage',
-        corejs: 3
-      }
+        corejs: 3,
+      },
     ],
     '@babel/typescript',
-    '@babel/react'
+    '@babel/react',
   ]
   const plugins = [
     '@babel/plugin-syntax-dynamic-import',
@@ -18,7 +19,7 @@ module.exports = (api) => {
     '@babel/proposal-object-rest-spread',
     '@babel/proposal-optional-chaining',
     '@babel/proposal-nullish-coalescing-operator',
-    'react-hot-loader/babel'
+    'react-hot-loader/babel',
   ]
   api.cache(false)
   return { presets, plugins }

@@ -6,21 +6,21 @@ const baseConfig = require('./webpack.config.base')
 
 const entry = {}
 
-Object.keys(baseConfig.entry).forEach(key => {
+Object.keys(baseConfig.entry).forEach((key) => {
   entry[key] = ['webpack-hot-middleware/client', baseConfig.entry[key]]
 })
 
 const devConfig = {
   mode: 'development',
   output: {
-    filename: 'js/[name].js'
+    filename: 'js/[name].js',
   },
   devtool: 'source-map',
   entry: entry,
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new ForkTsCheckerWebpackPlugin()
-  ]
+    new ForkTsCheckerWebpackPlugin(),
+  ],
 }
 
 const config = merge(baseConfig, devConfig)
