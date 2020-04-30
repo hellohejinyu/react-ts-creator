@@ -29,6 +29,7 @@
     ],
     "rules": {
         "react/display-name": "off",
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "no-unused-vars": "off"
     }
 }
