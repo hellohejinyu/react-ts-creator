@@ -1,5 +1,3 @@
-process.env.NODE_ENV = 'production'
-
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { merge } = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -9,15 +7,9 @@ const baseConfig = require('./webpack.config.base')
 const prodConfig = {
   mode: 'production',
   output: {
-    filename: 'js/[name]-[chunkhash].js',
+    filename: '[name]-[chunkhash].js',
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'css/[name]-[chunkhash].css',
-      chunkFilename: 'css/[id]-[chunkhash].css',
-    }),
-  ],
+  plugins: [new CleanWebpackPlugin()],
 }
 
 const config = merge(baseConfig, prodConfig)

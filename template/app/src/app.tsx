@@ -1,14 +1,14 @@
 import '@/styles/index.css'
-import 'normalize.css'
 import React from 'react'
 import { hot } from 'react-hot-loader'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import s from './home.scss'
+import reactLogo from '@/assets/img/react.svg'
 
-const Home = () => (
+const Home = (props: { title: string }) => (
   <div className={s.container}>
-    <img src={require('@/assets/img/react.svg')} />
-    <h1 className={s.title}>Hello React.</h1>
+    <img src={reactLogo} />
+    <h1 className={s.title}>{props.title}</h1>
   </div>
 )
 
@@ -17,7 +17,11 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact={true} path='/' component={Home} />
+          <Route
+            exact={true}
+            path='/'
+            render={() => <Home title='Hello React.' />}
+          />
         </Switch>
       </BrowserRouter>
     )

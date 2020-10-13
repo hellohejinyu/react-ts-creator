@@ -4,15 +4,12 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: {
-    index: path.resolve(__dirname, './src/index'),
-  },
+  entry: path.resolve(__dirname, './src/index'),
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.js', '.ts', '.tsx', '.json'],
     alias: {
       'react-dom': '@hot-loader/react-dom',
       '@': path.resolve(__dirname, './src'),
@@ -21,40 +18,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif|ttf|svg|woff|woff2)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              esModule: false,
-              outputPath: 'assets',
-              publicPath: '/assets',
-              name: '[hash].[ext]',
-            },
-          },
-        ],
+        test: /\.(bmp|png|jpg|gif|ttf|svg|woff|woff2)$/,
+        type: 'asset',
       },
       {
-        test: /\.(ts|js)x?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
       },
       {
         test: /\.css$/,
-        use: [
-          process.env.NODE_ENV !== 'production'
-            ? 'style-loader'
-            : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.scss$/,
         use: [
-          process.env.NODE_ENV !== 'production'
-            ? 'style-loader'
-            : MiniCssExtractPlugin.loader,
+          'style-loader',
           {
             loader: 'css-loader',
             options: {

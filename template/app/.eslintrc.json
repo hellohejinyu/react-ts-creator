@@ -1,35 +1,36 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "standard",
-        "plugin:prettier/recommended"
-    ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "react-hooks",
-        "@typescript-eslint",
-        "prettier"
-    ],
-    "rules": {
-        "react/display-name": "off",
-        "prettier/prettier": "error",
-        "no-unused-vars": "off"
-    }
+  "env": {
+      "browser": true,
+      "es6": true
+  },
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "standard",
+      "plugin:prettier/recommended"
+  ],
+  "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+  },
+  "plugins": [
+      "react",
+      "react-hooks",
+      "@typescript-eslint",
+      "prettier"
+  ],
+  "rules": {
+      "react/display-name": "off",
+      "prettier/prettier": "error",
+      "no-unused-vars": "off",
+      "no-use-before-define": "off"
+  }
 }

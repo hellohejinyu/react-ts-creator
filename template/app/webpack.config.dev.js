@@ -1,26 +1,16 @@
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
-const merge = require('webpack-merge')
-const { webpack } = require('webpack')
+const { merge } = require('webpack-merge')
+const webpack = require('webpack')
 
 const baseConfig = require('./webpack.config.base')
-
-const entry = {}
-
-Object.keys(baseConfig.entry).forEach((key) => {
-  entry[key] = ['webpack-hot-middleware/client', baseConfig.entry[key]]
-})
 
 const devConfig = {
   mode: 'development',
   output: {
-    filename: 'js/[name].js',
+    filename: '[name].js',
   },
   devtool: 'source-map',
-  entry: entry,
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new ForkTsCheckerWebpackPlugin(),
-  ],
+  entry: ['webpack-hot-middleware/client', baseConfig.entry],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
 }
 
 const config = merge(baseConfig, devConfig)
