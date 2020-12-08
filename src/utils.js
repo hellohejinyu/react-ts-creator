@@ -50,6 +50,9 @@ function done () {
 
 function installDependencies (appPath) {
   process.chdir(appPath)
+  console.log('')
+  console.log('Initialized a git repository.')
+  spawn.sync('git', ['init'], { stdio: 'inherit' })
   inquirer
     .prompt([
       {
@@ -69,9 +72,6 @@ function installDependencies (appPath) {
 }
 
 function runDevServer (appPath, tool) {
-  console.log('')
-  console.log('Initialized a git repository.')
-  spawn.sync('git', ['init'], { stdio: 'inherit' })
   console.log('')
   console.log(`Success! Created App at ${appPath}`)
   console.log('')
