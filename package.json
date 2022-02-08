@@ -1,6 +1,6 @@
 {
   "name": "react-ts-creator",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Set up a React&Typescript web app by running one command.",
   "bin": "./bin/react-ts-creator",
   "repository": {
