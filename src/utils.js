@@ -78,7 +78,7 @@ function runDevServer (appPath, tool) {
   console.log('We suggest that you begin by typing:')
   console.log('')
   console.log(`  ${chalk.cyan('cd')} ${appPath}`)
-  console.log(`  ${chalk.cyan(`${tool} start`)}`)
+  console.log(`  ${chalk.cyan(`${tool} dev`)}`)
   console.log('')
   console.log('Happy coding!')
 }

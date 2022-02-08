@@ -15,10 +15,10 @@
   "author": "kaijun",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^4.1.0",
-    "commander": "^6.2.0",
-    "cross-spawn": "^7.0.3",
-    "inquirer": "^7.3.3"
+    "chalk": "4.x",
+    "commander": "6.x",
+    "cross-spawn": "7.x",
+    "inquirer": "7.x"
   },
   "bugs": {
     "url": "https://github.com/elowes/react-ts-creator/issues"
