@@ -5,7 +5,7 @@
   "bin": "./bin/react-ts-creator",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elowes/react-ts-creator.git"
+    "url": "git+https://github.com/hellohejinyu/react-ts-creator.git"
   },
   "keywords": [
     "react",
@@ -16,19 +16,20 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "4.x",
-    "commander": "6.x",
-    "cross-spawn": "7.x",
-    "inquirer": "7.x"
+    "commander": "^10.0.1",
+    "cross-spawn": "^7.0.3",
+    "inquirer": "8.x"
   },
   "bugs": {
-    "url": "https://github.com/elowes/react-ts-creator/issues"
+    "url": "https://github.com/hellohejinyu/react-ts-creator/issues"
   },
-  "homepage": "https://github.com/elowes/react-ts-creator#readme",
+  "homepage": "https://github.com/hellohejinyu/react-ts-creator#readme",
   "devDependencies": {
-    "eslint": "^7.15.0",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint": "^8.40.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1"
+    "eslint-plugin-promise": "^6.1.1"
   }
 }

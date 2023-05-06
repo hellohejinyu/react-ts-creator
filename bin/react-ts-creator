@@ -1,24 +1,26 @@
 #!/usr/bin/env node
 
-const { logRed, initProj } = require('../src/utils')
-const program = require('commander')
+const { logRed, initProject } = require('../src/utils')
+const { Command } = require('commander')
 const fs = require('fs')
 const path = require('path')
+
+const program = new Command()
 
 program
   .command('init [app-name]')
   .alias('i')
   .description('create a React&Typescript app under the [app-name] folder. If there is no [app-name], create it directly in the current directory.')
-  .action(function (appName, cmd) {
+  .action((appName) => {
     if (!appName) {
       const appPath = path.resolve('./')
-      initProj(appPath)
+      initProject(appPath)
     } else {
       const appPath = path.resolve(`./${appName}`)
       if (fs.existsSync(appPath)) {
         logRed('The current directory already exists. Can\'t continue. Please delete or replace the directory and try again.')
       } else {
-        initProj(appPath)
+        initProject(appPath)
       }
     }
   })

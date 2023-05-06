@@ -4,19 +4,19 @@ const spawn = require('cross-spawn')
 
 const log = console.log
 
-function logGreen (msg) {
+const logGreen = (msg) => {
   log(chalk.green(msg))
 }
 
-function logYellow (msg) {
+const logYellow = (msg) => {
   log(chalk.yellow(msg))
 }
 
-function logRed (msg) {
+const logRed = (msg) => {
   log(chalk.red(msg))
 }
 
-function initProj (appPath) {
+const initProject = (appPath) => {
   inquirer
     .prompt([
       {
@@ -26,12 +26,12 @@ function initProj (appPath) {
         default: false
       }
     ])
-    .then(async answers => {
+    .then(async (answers) => {
       if (!answers.rewrite) {
         logGreen('You have canceled the operation without any changes.')
       } else {
         logYellow('🌎Get the App base files from GitHub.')
-        const res = spawn.sync('git', ['clone', 'https://github.com/elowes/react-ts-creator-template', appPath], { stdio: 'inherit' })
+        const res = spawn.sync('git', ['clone', 'https://github.com/hellohejinyu/react-ts-creator-template', appPath], { stdio: 'inherit' })
         if (!res.error && res.status === 0) {
           // 删除模板里面的 .git
           spawn.sync('rm', ['-rf', `${appPath}/.git`])
@@ -44,11 +44,11 @@ function initProj (appPath) {
     })
 }
 
-function done () {
+const done = () => {
   console.log('✨ Done.')
 }
 
-function installDependencies (appPath) {
+const installDependencies = (appPath) => {
   process.chdir(appPath)
   console.log('')
   console.log('Initialized a git repository.')
@@ -71,7 +71,7 @@ function installDependencies (appPath) {
     })
 }
 
-function runDevServer (appPath, tool) {
+const runDevServer = (appPath, tool) => {
   console.log('')
   console.log(`Success! Created App at ${appPath}`)
   console.log('')
@@ -87,5 +87,5 @@ module.exports = {
   logGreen,
   logRed,
   installDependencies,
-  initProj
+  initProject
 }
